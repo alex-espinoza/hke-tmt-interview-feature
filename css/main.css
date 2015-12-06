@@ -188,8 +188,11 @@ section {
   z-index: 999;
   top: 26%;
   width: 100%;
+  opacity: 1;
 
-  -webkit-filter: blur(0px);
+  filter: url('../index.html#coverSectionBlur');
+  -webkit-filter: url('#coverSectionBlur');
+  //-webkit-filter: url('../index.html#coverSectionBlur');
 }
 
 #front-cover .cover-content h1 {
@@ -227,7 +230,7 @@ section {
   height: 100%;
 }
 
-#backgrounds .section-1 {
+#backgrounds .cover-section {
   background-image: url(../img/background-1.jpg);
   background-position: center center;
   background-repeat: no-repeat;

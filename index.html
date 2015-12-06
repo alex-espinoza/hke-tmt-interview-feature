@@ -31,7 +31,12 @@
     </section>
 
     <div id="backgrounds">
-      <div class="fixed-full-background section-1 visible"></div>
+      <svg height="0" xmlns="http://www.w3.org/2000/svg">
+        <filter id="coverSectionBlur" x="-5%" y="-5%" width="110%" height="110%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="0" />
+        </filter>
+      </svg>
+      <div class="fixed-full-background cover-section visible"></div>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
