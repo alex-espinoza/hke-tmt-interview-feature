@@ -3,6 +3,7 @@ $(function() {
   var $frontCover = $('#front-cover');
   var $frontCoverContent = $('#front-cover .cover-content');
   var $coverSectionBlur = $('#coverSectionBlur').children();
+  var $section2 = $('#section-2');
 
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
@@ -45,12 +46,26 @@ $(function() {
     }, 0);
 
   new ScrollMagic.Scene({
-      triggerElement: $frontCover,
-      duration: $frontCover[0].clientHeight * 0.5,
-      offset: $frontCover[0].clientHeight * 0.05
-    })
-    .setTween(frontCoverFadeout)
-    .addTo(controller);
+    triggerElement: $frontCover[0],
+    duration: $frontCover[0].clientHeight * 0.80,
+    offset: $frontCover[0].clientHeight * 0.05
+  })
+  .setTween(frontCoverFadeout)
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: $frontCover[0],
+    offset: $frontCover[0].clientHeight * 0.85
+  })
+  .setClassToggle('#backgrounds .background-2', 'visible')
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: $section2[0],
+    offset: $section2[0].clientHeight * 0.50
+  })
+  .setClassToggle('#backgrounds .background-3', 'visible')
+  .addTo(controller);
 
 });
 

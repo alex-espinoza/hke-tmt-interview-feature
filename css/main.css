@@ -177,7 +177,7 @@ section {
 }
 
 #front-cover {
-  height: 100rem;
+  height: 120rem;
 }
 
 #front-cover .cover-content {
@@ -189,6 +189,7 @@ section {
   top: 26%;
   width: 100%;
   opacity: 1;
+  text-shadow: #000 1px 1px;
 
   filter: url('../index.html#coverSectionBlur');
   -webkit-filter: url('#coverSectionBlur');
@@ -221,22 +222,68 @@ section {
   //-webkit-filter: blur(0px);
 }
 
+#section-2 {
+  height: 100%;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+section .text-column {
+  width: 33%;
+  line-height: 2.2rem;
+  position: relative;
+  font-size: 1.5rem;
+  color: #fdfdfd;
+  text-shadow: #000 1px 1px;
+}
+
 #backgrounds .fixed-full-background {
-  display: none;
+  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-#backgrounds .cover-section {
-  background-image: url(../img/background-1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-color: #fff;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+}
+
+#backgrounds .fixed-full-background.visible {
+  opacity: 1;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+}
+
+#backgrounds .background-1 {
+  background-image: url(../img/background-1.jpg);
+  z-index: 11;
+}
+
+#backgrounds .background-2 {
+  background-image: url(../img/background-2.jpg);
+  z-index: 12;
+}
+
+#backgrounds .background-3 {
+  background-image: url(../img/background-3.jpg);
+  z-index: 13;
 }
 
 
@@ -387,8 +434,16 @@ section {
   *zoom: 1;
 }
 
-.visible {
+/*.visible {
   display: block !important;
+}*/
+
+.right {
+  float: right;
+}
+
+.padding-bottom-50 {
+  padding-bottom: 50rem;
 }
 
 /* ==========================================================================
