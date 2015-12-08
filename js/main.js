@@ -4,6 +4,8 @@ $(function() {
   var $frontCoverContent = $('#front-cover .cover-content');
   var $coverSectionBlur = $('#coverSectionBlur').children();
   var $section2 = $('#section-2');
+  var $section3 = $('#section-3');
+  var $section3FloatingBlock = $('#section-3 .floating-block');
 
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
@@ -65,6 +67,38 @@ $(function() {
     offset: $section2[0].clientHeight * 0.50
   })
   .setClassToggle('#backgrounds .background-3', 'visible')
+  .addTo(controller);
+
+  new ScrollMagic.Scene({
+    triggerElement: $section3[0]
+  })
+  .setClassToggle('#backgrounds .background-4', 'visible')
+  .addTo(controller);
+
+  var section3TextTranslateAndFadeIn = new TweenMax($section3FloatingBlock, 1, {
+    opacity: 1,
+    y: '-70%'
+  });
+
+  new ScrollMagic.Scene({
+    triggerElement: $section3[0],
+    duration: $section3[0].clientHeight * 0.35,
+    offset: $section3[0].clientHeight * 0.10
+  })
+  .setTween(section3TextTranslateAndFadeIn)
+  .addTo(controller);
+
+  var section3TextTranslateAndFadeIn = new TweenMax($section3FloatingBlock, 1, {
+    opacity: 0,
+    y: '-30%'
+  });
+
+  new ScrollMagic.Scene({
+    triggerElement: $section3[0],
+    duration: $section3[0].clientHeight * 0.35,
+    offset: $section3[0].clientHeight * 0.55
+  })
+  .setTween(section3TextTranslateAndFadeIn)
   .addTo(controller);
 
 });
